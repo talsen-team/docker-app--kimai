@@ -13,6 +13,9 @@
 !docker/server--kimai/default.docker
 !docker/server--kimai-database/
 !docker/server--kimai-database/default.docker
+!docker-compose/
+!docker-compose/server--kimai/
+!docker-compose/server--kimai/default.docker-compose
 !.gitignore
 !.gitmodules
 !host.env

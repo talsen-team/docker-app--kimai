@@ -1,0 +1,51 @@
+version:            '3.5'
+
+services:
+  database:
+    build:
+      context:      './../../docker/server--kimai-database'
+      dockerfile:   'default.docker'
+    command:        '--default-storage-engine innodb'
+    deploy:
+      resources:
+        limits:
+          memory:     '256M'
+        reservations:
+          memory:     '64M'
+    env_file:
+      -             './../../container.env'
+    image:          'talsenteam/docker-kimai-database:v5.7'
+    networks:
+      kimai.local:
+        aliases:
+          -         'database.kimai.local'
+    restart:        'unless-stopped'
+    volumes:
+      -             '${HOST_PATH_TO_VOLUMES_ROOT}/database/var/lib/mysql:/var/lib/mysql'
+
+  kimai:
+    build:
+      context:      './../../docker/server--kimai'
+      dockerfile:   'default.docker'
+    env_file:
+      -             './../../container.env'
+    image:          'talsenteam/docker-kimai:v1.7'
+    networks:
+      kimai.local:
+    ports:
+      -             '80:8001'
+    restart:        'unless-stopped'
+    volumes:
+      -             '${HOST_PATH_TO_VOLUMES_ROOT}/kimai/opt/kimai/var:/opt/kimai/var'
+
+#  postfix:
+#    environment:
+#      maildomain:   'smtp.1und1.de'
+#      smtp_user:    'kimai-admin@talsen.team:Hk3z!AB1t59'
+#    image:          'catatnight/postfix'
+#    networks:
+#      kimai.local:
+#    restart:        'unless-stopped'
+
+networks:
+  kimai.local:
