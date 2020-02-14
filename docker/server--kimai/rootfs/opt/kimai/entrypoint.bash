@@ -24,6 +24,7 @@ function run_entrypoint() {
     www-data:www-data \
     "${KIMAI_VAR_DIR}"
 
+    /bin/bash \
     /startup.sh
 }
 

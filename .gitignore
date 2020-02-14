@@ -10,6 +10,7 @@
 !docker/server--kimai/rootfs/opt/
 !docker/server--kimai/rootfs/opt/kimai/
 !docker/server--kimai/rootfs/opt/kimai/entrypoint.bash
+!docker/server--kimai/rootfs/startup.sh
 !docker/server--kimai/default.docker
 !docker/server--kimai-database/
 !docker/server--kimai-database/default.docker
