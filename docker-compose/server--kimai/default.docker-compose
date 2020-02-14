@@ -38,14 +38,5 @@ services:
     volumes:
       -             '${HOST_PATH_TO_VOLUMES_ROOT}/kimai/opt/kimai/var:/opt/kimai/var'
 
-#  postfix:
-#    environment:
-#      maildomain:   'smtp.1und1.de'
-#      smtp_user:    'kimai-admin@talsen.team:Hk3z!AB1t59'
-#    image:          'catatnight/postfix'
-#    networks:
-#      kimai.local:
-#    restart:        'unless-stopped'
-
 networks:
   kimai.local:
