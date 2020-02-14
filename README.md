@@ -7,6 +7,12 @@
 
 The server application kimai ready to run inside a docker container.
 
+[![Docker Automated build](https://img.shields.io/docker/cloud/automated/talsenteam/docker-kimai-database.svg?style=for-the-badge)](//hub.docker.com/r/talsenteam/docker-kimai-database/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/talsenteam/docker-kimai-database.svg?style=for-the-badge)](//hub.docker.com/r/talsenteam/docker-kimai-database/)
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/talsenteam/docker-kimai-database.svg?style=for-the-badge)](//hub.docker.com/r/talsenteam/docker-kimai-database/)
+
+An utility application for kimai ready to run inside a docker container.
+
 ## how to use
 
 To easily experiment with kimai, the following pre-requisites are preferred:
