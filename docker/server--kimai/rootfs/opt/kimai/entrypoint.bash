@@ -9,6 +9,9 @@ function run_entrypoint() {
     local \
     KIMAI_VAR_DIR="/opt/kimai/var"
 
+    local \
+    KIMAI_CACHE_DIR="${KIMAI_VAR_DIR}/cache"
+
     if [ -z "$( ls ${KIMAI_VAR_DIR} )" ];
     then
         sudo \
@@ -17,6 +20,11 @@ function run_entrypoint() {
         "${DEFAULT_DIR}/${KIMAI_VAR_DIR}/" \
         "${KIMAI_VAR_DIR}"
     fi
+
+    sudo \
+    rm \
+    -fr \
+    "${KIMAI_CACHE_DIR}"
 
     sudo \
     chown \
