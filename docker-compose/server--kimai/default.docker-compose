@@ -37,6 +37,7 @@ services:
     restart:        'unless-stopped'
     volumes:
       -             '${HOST_PATH_TO_VOLUMES_ROOT}/kimai/opt/kimai/var:/opt/kimai/var'
+      -             '${HOST_PATH_TO_VOLUMES_ROOT}/kimai/override:/override'
 
 networks:
   kimai.local:

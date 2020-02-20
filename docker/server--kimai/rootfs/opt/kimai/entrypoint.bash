@@ -18,6 +18,26 @@ function import_defaults() {
     fi
 }
 
+function import_overrides() {
+    local \
+    OVERRIDE_DIR="/override"
+    
+    if [ -d "${OVERRIDE_DIR}" ] ;
+    then
+        sudo \
+        chown \
+        --recursive \
+        www-data:www-data \
+        "${OVERRIDE_DIR}"
+
+        sudo \
+        rsync \
+        --archive \
+        "${OVERRIDE_DIR}/" \
+        "/"
+    fi
+}
+
 function clear_kimai_cache() {
     local \
     KIMAI_CACHE_DIR="${KIMAI_VAR_DIR}/cache"
@@ -38,6 +58,7 @@ function fix_permissions() {
 
 function run_entrypoint() {
     import_defaults
+    import_overrides
     clear_kimai_cache
     fix_permissions
 
