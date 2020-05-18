@@ -29,7 +29,7 @@ services:
       dockerfile:   'default.docker'
     env_file:
       -             './../../container.env'
-    image:          'talsenteam/docker-kimai:v1.7'
+    image:          'talsenteam/docker-kimai:v1.8'
     networks:
       kimai.local:
     ports:
