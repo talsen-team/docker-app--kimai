@@ -2,7 +2,8 @@
 
 set -euo pipefail
 
-KIMAI_VAR_DIR="/opt/kimai/var"
+KIMAI_DIR="/opt/kimai"
+KIMAI_VAR_DIR="${KIMAI_DIR}/var"
 
 function import_defaults() {
     local \
@@ -49,6 +50,11 @@ function clear_kimai_cache() {
 }
 
 function fix_permissions() {
+    sudo \
+    chown \
+    www-data:www-data \
+    "${KIMAI_DIR}"
+
     sudo \
     chown \
     --recursive \
